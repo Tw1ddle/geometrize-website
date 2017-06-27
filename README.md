@@ -3,7 +3,7 @@
 [![CC-BY-NC-ND](https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 [![Travis Website Build Status](https://img.shields.io/travis/Tw1ddle/geometrize-website.svg?style=flat-square)](https://travis-ci.org/Tw1ddle/geometrize-website)
 
-Landing page code for Geometrize, a tool for geometrizing images into geometric primitives. It is a work in progress - for now, I recommend using the [Haxe version](https://github.com/Tw1ddle/geometrize-haxe) instead.
+Landing page code for Geometrize, a tool for geometrizing images into geometric primitives. View the page [here](http://www.geometrize.co.uk/).
 
 [![Geometrized Woodland](https://github.com/Tw1ddle/geometrize-website/blob/master/screenshots/woodland.jpg?raw=true "Woodland, 400 Rotated Rectangles")](https://github.com/Tw1ddle/geometrize-lib)
 
