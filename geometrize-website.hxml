@@ -2,3 +2,7 @@
 
 # Enable full dead code elimination
 -dce full
+
+--no-traces
+
+-js bin/js/geometrize.js
