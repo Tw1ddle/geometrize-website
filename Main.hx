@@ -187,10 +187,16 @@ class Main {
 	];
 	private var moreProjectsItems:Array<ImageItem> = [
 		new ImageItem(
-			"assets/images/seagull_geometrized.png",
+			"assets/images/haxe_demo_geometrized.png",
 			"<i>The web demo, turning images into shapes in your browser</i>",
 			ImageItemTypeId.APP_RESOURCE,
 			"http://www.samcodes.co.uk/project/geometrize-haxe-web/"
+		),
+		new ImageItem(
+			"assets/images/geometrize_tutorial_videos.png",
+			"<i>Quickstart videos and tutorials, for getting the most out of Geometrize</i>",
+			ImageItemTypeId.APP_RESOURCE,
+			"https://www.youtube.com/playlist?list=PLe9ogi_J4cFgcqLdpmPC7GdFV5ohJPEzN"
 		),
 		new ImageItem(
 			"assets/images/geometrize_twitter_bot.png",
@@ -200,19 +206,13 @@ class Main {
 		),
 		new ImageItem(
 			"assets/images/webgl_tweens_geometrize_demo.png",
-			"<i>The WebGL demo showcasing animations of exported shape data</i>",
+			"<i>The WebGL demo, showcasing animations made from shape data</i>",
 			ImageItemTypeId.APP_RESOURCE,
 			"http://tweens.geometrize.co.uk/"
 		),
 		new ImageItem(
-			"assets/images/geometrize_tutorial_videos.png",
-			"<i>Quickstart videos and tutorials, for helping people get the most out of Geometrize</i>",
-			ImageItemTypeId.APP_RESOURCE,
-			"https://www.youtube.com/playlist?list=PLe9ogi_J4cFgcqLdpmPC7GdFV5ohJPEzN"
-		),
-		new ImageItem(
 			"assets/images/resources_page_image.png",
-			"<i>Additional resources. More places to look for inspiration, free images and code</i>",
+			"<i>Additional resources. Places to look for inspiration, related projects and free images</i>",
 			ImageItemTypeId.APP_RESOURCE,
 			"http://resources.geometrize.co.uk/"
 		)
