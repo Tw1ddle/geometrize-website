@@ -3,7 +3,7 @@
 [![CC-BY-NC-ND](https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 [![Travis Website Build Status](https://img.shields.io/travis/Tw1ddle/geometrize-website.svg?style=flat-square)](https://travis-ci.org/Tw1ddle/geometrize-website)
 
-Repository for the [landing page](http://www.geometrize.co.uk/) of the Geometrize app, a desktop app for geometrizing images into geometric primitives.
+Repository for the [landing page](http://www.geometrize.co.uk/) of [Geometrize](https://github.com/Tw1ddle/geometrize), a desktop app for geometrizing images into geometric primitives.
 
 [![Geometrized Boat](https://github.com/Tw1ddle/geometrize-website/blob/master/screenshots/boat.png?raw=true "Geometrized Boat, 400 Rotated Ellipses")](http://www.geometrize.co.uk/)
 
