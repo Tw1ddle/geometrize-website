@@ -111,7 +111,7 @@ a:hover {
 .galleryitemcontainer {
     width: 30%;
     max-width: 30%;
-    min-width: 240px;
+    min-width: 360px;
     margin: 10px 10px 10px 10px;
     padding: 10px 10px 0px 10px;
     background: #ffffff;
@@ -179,4 +179,22 @@ a:hover {
 
 .cocoen ::before{
     display:none; # Hide the cocoen grab handle
+}
+
+.stitched {
+    padding: 20px;
+    margin: 20px 10px 0px 10px;
+    background: #ffffff;
+    color: #000000;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1.3em;
+    border: 2px dashed #aaa;
+    border-radius: 10px;
+    box-shadow: 0 0 0 4px #ffffff, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+    font-weight: normal;
+}
+
+.stitched:hover {
+    box-shadow: 0 0 0 6px #ffffff, 2px 1px 6px 6px rgba(10, 10, 0, 0.5);
 }

@@ -42,14 +42,20 @@ class ImageItem {
  * Consists of a before (original) and after (geometrized) image path and a description.
  */
 class GalleryItem {
-	public function new(beforeImagePath:String, afterImagePath:String, caption:String) {
+	public function new(beforeImagePath:String, afterImagePath:String, shapeName:String, shapeCount:Int) {
 		this.beforeImagePath = beforeImagePath;
 		this.afterImagePath = afterImagePath;
-		this.caption = caption;
+		this.shapeName = shapeName;
+		this.shapeCount = shapeCount;
 	}
 	public var beforeImagePath(default,null):String;
 	public var afterImagePath(default,null):String;
-	public var caption(default,null):String;
+	public var caption(get, null):String;
+	private function get_caption():String {
+		return "<i>" + Std.string(shapeCount) + ' <a href="' + Main.geometrizeUrl + afterImagePath + '" target="_blank">' + shapeName + "</a>" + "</i>";
+	}
+	public var shapeName(default, null):String;
+	public var shapeCount(default, null):Int;
 }
 
 /**
@@ -57,6 +63,8 @@ class GalleryItem {
  * @author Sam Twidale (http://www.geometrize.co.uk/)
  */
 class Main {
+	public static inline var geometrizeUrl:String = "http://www.geometrize.co.uk/"; // URL of the hosted website
+	
 	// Helpers to resolve page asset paths based on platform/OS etc
 	private static var operatingSystem:OperatingSystem = PlatformDetector.getOperatingSystem();
 	private static var platformDownloadLink:String = getDownloadLinkForOperatingSystem(PlatformDetector.getOperatingSystem());
@@ -79,41 +87,44 @@ class Main {
 		new GalleryItem(
 			resolveAssetPath("assets/images/examples/train.png"),
 			resolveAssetPath("assets/images/examples/train_geometrized.png"),
-			"<i>260 Rotated Ellipses</i>"
+			"Rotated Ellipses",
+			260
 		),
 		new GalleryItem(
 			resolveAssetPath("assets/images/examples/man.png"),
 			resolveAssetPath("assets/images/examples/man_geometrized.png"),
-			"<i>440 Rotated Rectangles</i>"
+			"Rotated Rectangles",
+			440
 		),
 		new GalleryItem(
 			resolveAssetPath("assets/images/examples/rose.png"),
 			resolveAssetPath("assets/images/examples/rose_geometrized.png"),
-			"<i>240 Triangles</i>"
+			"Triangles",
+			240
 		)
 	];
 	private var keyFeaturesItems:Array<ImageItem> = [
 		new ImageItem(
 			resolveAssetPath("assets/images/$screenshotFolder/geometrize_image_task.png"),
-			"<i>Configurable, interactive image geometrization</i>",
+			"<i>Configurable, interactive image geometrization. Dozens of settings, with zoomable raster and vector-based views for watching your images being recreated as geometric primitives in realtime.</i>",
 			ImageItemTypeId.APP_FEATURE,
 			platformDownloadLink
 		),
 		new ImageItem(
 			resolveAssetPath("assets/images/$screenshotFolder/geometrize_landing_page.png"),
-			"<i>Get started with hundreds of preconfigured sample images</i>",
+			"<i>Get started with hundreds of preset images, with preconfigured settings. Alternatively import your own photos, or copy-paste a link.</i>",
 			ImageItemTypeId.APP_FEATURE,
 			platformDownloadLink
 		),
 		new ImageItem(
 			resolveAssetPath("assets/images/$screenshotFolder/geometrize_export_options.png"),
-			"<i>Export to PNG, SVG, JSON and more...</i>",
+			"<i>Export the geometrized images as PNG, JPG, SVG, JSON, animated GIF, sequences of images, and more...</i>",
 			ImageItemTypeId.APP_FEATURE,
 			platformDownloadLink
 		),
 		new ImageItem(
 			resolveAssetPath("assets/images/$screenshotFolder/geometrize_scripting_panel.png"),
-			"<i>Design your own geometrization algorithm with scripts</i>",
+			"<i>Customize and reimplement the geometrization algorithm using the embedded ChaiScript scripting engine.</i>",
 			ImageItemTypeId.APP_FEATURE,
 			platformDownloadLink
 		)
@@ -122,47 +133,56 @@ class Main {
 		new GalleryItem(
 			resolveAssetPath("assets/images/examples/resting_shoes.png"),
 			resolveAssetPath("assets/images/examples/resting_shoes_geometrized.png"),
-			"<i>350 Rotated Ellipses</i>"
+			"Rotated Ellipses",
+			350
 		),
 		new GalleryItem(
 			resolveAssetPath("assets/images/examples/ridge.png"),
 			resolveAssetPath("assets/images/examples/ridge_geometrized.png"),
-			"<i>430 Circles</i>"
+			"Circles",
+			430
 		),
 		new GalleryItem(
 			resolveAssetPath("assets/images/examples/building.png"),
 			resolveAssetPath("assets/images/examples/building_geometrized.png"),
-			"<i>460 Circles</i>"
+			"Circles",
+			460
 		),
 		new GalleryItem(
 			resolveAssetPath("assets/images/examples/sunset.png"),
 			resolveAssetPath("assets/images/examples/sunset_geometrized.png"),
-			"<i>350 Triangles</i>"
+			"Triangles",
+			350
 		),
 		new GalleryItem(
 			resolveAssetPath("assets/images/examples/man.png"),
 			resolveAssetPath("assets/images/examples/man_geometrized.png"),
-			"<i>400 Rotated Rectangles</i>"
+			"Rotated Rectangles",
+			400
 		),
 		new GalleryItem(
 			resolveAssetPath("assets/images/examples/boat.png"),
 			resolveAssetPath("assets/images/examples/boat_geometrized.png"),
-			"<i>370 Rotated Ellipses</i>"
+			"Rotated Ellipses",
+			370
 		),
 		new GalleryItem(
 			resolveAssetPath("assets/images/examples/wolf.png"),
 			resolveAssetPath("assets/images/examples/wolf_geometrized.png"),
-			"<i>210 Triangles</i>"
+			"Triangles",
+			210
 		),
 		new GalleryItem(
 			resolveAssetPath("assets/images/examples/flower_another.png"),
 			resolveAssetPath("assets/images/examples/flower_another_geometrized.png"),
-			"<i>330 Rotated Ellipses</i>"
+			"Rotated Ellipses",
+			330
 		),
 		new GalleryItem(
 			resolveAssetPath("assets/images/examples/borrowdale_autumn.png"),
 			resolveAssetPath("assets/images/examples/borrowdale_autumn_geometrized.png"),
-			"<i>500 Rotated Ellipses</i>"
+			"Rotated Ellipses",
+			500
 		)
 	];
 	private var moreProjectsItems:Array<ImageItem> = [
@@ -324,19 +344,19 @@ class Main {
 	 */
 	private static inline function makeDownloadSection(container:Element):Void {
 		var download = js.Browser.document.createAnchorElement();
-		download.className = "button";
+		download.className = "button stitched";
 		download.innerText = "Download For " + getOperatingSystemName(PlatformDetector.getOperatingSystem());
 		download.href = getDownloadLinkForOperatingSystem(PlatformDetector.getOperatingSystem());
 		download.target = "_blank";
 		
 		var getCode = js.Browser.document.createAnchorElement();
-		getCode.className = "button";
+		getCode.className = "button stitched";
 		getCode.innerText = "Download Source Code";
 		getCode.href = "https://github.com/Tw1ddle/geometrize";
 		getCode.target = "_blank";
 		
 		var webDemo = js.Browser.document.createAnchorElement();
-		webDemo.className = "button";
+		webDemo.className = "button stitched";
 		webDemo.innerText = "Run Web Demo";
 		webDemo.href = "http://www.samcodes.co.uk/project/geometrize-haxe-web/";
 		webDemo.target = "_blank";
