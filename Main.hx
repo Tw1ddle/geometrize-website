@@ -109,13 +109,13 @@ class Main {
 	private var keyFeaturesItems:Array<ImageItem> = [
 		new ImageItem(
 			resolveAssetPath("assets/images/$screenshotFolder/geometrize_image_task.png"),
-			"<i>Interactive image geometrization with dozens of settings. Zoomable raster and vector-based views for watching images transform into geometric primitives in realtime.</i>",
+			"<i>Interactive image geometrization with dozens of settings. Zoomable raster and vector-based views for watching images transform into geometric primitives in realtime</i>",
 			ImageItemTypeId.APP_FEATURE,
 			platformDownloadLink
 		),
 		new ImageItem(
 			resolveAssetPath("assets/images/$screenshotFolder/geometrize_landing_page.png"),
-			"<i>Get started with hundreds of preset images, with preconfigured settings. Or import your own photos - simply drag-drop an image, or copy-paste a link.</i>",
+			"<i>Get started with hundreds of preset images, with preconfigured settings. Or import your own photos - simply drag-drop an image, or copy-paste a link</i>",
 			ImageItemTypeId.APP_FEATURE,
 			platformDownloadLink
 		),
@@ -127,7 +127,7 @@ class Main {
 		),
 		new ImageItem(
 			resolveAssetPath("assets/images/$screenshotFolder/geometrize_scripting_panel.png"),
-			"<i>Customize and reimplement the geometrization algorithm using the embedded ChaiScript scripting engine.</i>",
+			"<i>Customize and reimplement the geometrization algorithm using the embedded ChaiScript scripting engine</i>",
 			ImageItemTypeId.APP_FEATURE,
 			platformDownloadLink
 		)
@@ -227,7 +227,7 @@ class Main {
 		),
 		new ImageItem(
 			"assets/images/resources_page_image.png",
-			"<i>Additional resources. Places to look for inspiration, related projects and free images</i>",
+			"<i>Additional resources. Places to find inspiration, related projects and free images</i>",
 			ImageItemTypeId.APP_RESOURCE,
 			"http://resources.geometrize.co.uk/"
 		)
