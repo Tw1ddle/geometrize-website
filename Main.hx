@@ -3,7 +3,6 @@ package;
 import PlatformDetector;
 import haxe.Constraints;
 import js.Browser;
-import js.Cocoen;
 import js.html.Element;
 import js.html.DivElement;
 import js.html.InputElement;
@@ -52,7 +51,7 @@ class GalleryItem {
 	public var afterImagePath(default,null):String;
 	public var caption(get, null):String;
 	private function get_caption():String {
-		return "<i>" + Std.string(shapeCount) + ' <a href="' + Main.geometrizeUrl + afterImagePath + '" target="_blank">' + shapeName + "</a>" + "</i>";
+		return "<i>" + ' <a href="' + Main.geometrizeUrl + afterImagePath + '" target="_blank">' + Std.string(shapeCount) + " " + shapeName + "</a>" + "</i>";
 	}
 	public var shapeName(default, null):String;
 	public var shapeCount(default, null):Int;
@@ -236,9 +235,9 @@ class Main {
 		makeDownloadSection(startDownloadContainer);
 		makeDownloadSection(endDownloadContainer);
 		
-		var nodes = js.Browser.document.querySelectorAll('.cocoen');
+		var nodes = js.Browser.document.querySelectorAll('.twentytwenty');
 		for (node in nodes) {
-			new Cocoen(cast node);
+			new TwentyTwenty(cast node);
 		}
 	}
 
@@ -303,10 +302,10 @@ class Main {
 		var container = js.Browser.document.createDivElement();
 		container.className = "container galleryitemcontainer";
 		
-		var cocoen = js.Browser.document.createDivElement();
-		cocoen.className = "cocoen galleryitem";
+		var twentyTwenty = js.Browser.document.createDivElement();
+		twentyTwenty.className = "twentytwenty galleryitem";
 		
-		container.appendChild(cocoen);
+		container.appendChild(twentyTwenty);
 		
 		var captionText = js.Browser.document.createParagraphElement();
 		captionText.innerHTML = item.caption;
@@ -319,8 +318,8 @@ class Main {
 		var afterImage = js.Browser.document.createImageElement();
 		afterImage.src = item.afterImagePath;
 		
-		cocoen.appendChild(beforeImage);
-		cocoen.appendChild(afterImage);
+		twentyTwenty.appendChild(beforeImage);
+		twentyTwenty.appendChild(afterImage);
 		
 		row.appendChild(container);
 	}

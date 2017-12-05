@@ -1,0 +1,61 @@
+.twentytwenty {
+    box-sizing: border-box;
+    cursor: pointer;
+    line-height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+.twentytwenty * {
+    box-sizing: inherit
+}
+.twentytwenty::after,
+.twentytwenty::before {
+    box-sizing: inherit
+}
+.twentytwenty img,
+.twentytwenty picture>img {
+    max-width: none
+}
+.twentytwenty>img,
+.twentytwenty>picture>img {
+    display: block;
+    width: 100%
+}
+.twentytwenty>div:first-child,
+picture .twentytwenty>div {
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 50%
+}
+.twentytwenty-drag {
+    background: #fff;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    position: absolute;
+    top: 0;
+    width: 2px
+}
+.twentytwenty-drag::before {
+    border: 3px solid #fff;
+    content: '';
+    height: 30px;
+    left: 50%;
+    margin-left: -7px;
+    margin-top: -18px;
+    position: absolute;
+    top: 50%;
+    width: 14px
+}
+.twentytwenty ::before{
+    display:none; # Hide the twentytwenty grab handle
+}

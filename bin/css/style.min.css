@@ -177,10 +177,6 @@ a:hover {
     width: 40%;
 }
 
-.cocoen ::before{
-    display:none; # Hide the cocoen grab handle
-}
-
 .stitched {
     padding: 20px;
     margin: 20px 10px 0px 10px;
