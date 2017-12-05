@@ -241,6 +241,10 @@ class Main {
 		Browser.window.onload = onWindowLoaded;
 	}
 	
+	private inline function onWindowLoaded():Void {
+		init();
+	}
+	
 	private inline function init():Void {
 		setupLinks();
 		
@@ -255,20 +259,6 @@ class Main {
 		for (node in nodes) {
 			new TwentyTwenty(cast node);
 		}
-	}
-
-	private inline function onWindowLoaded():Void {
-		init();
-		animate();
-	}
-	
-	/**
-	 * Main update loop
-	 */
-	private function animate():Void {
-		Browser.window.setTimeout(function():Void {
-			this.animate();
-		}, 20);
 	}
 	
 	/**

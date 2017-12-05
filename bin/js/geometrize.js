@@ -266,13 +266,6 @@ Main.prototype = {
 			++_g6;
 			new TwentyTwenty(node);
 		}
-		this.animate();
-	}
-	,animate: function() {
-		var _gthis = this;
-		window.setTimeout(function() {
-			_gthis.animate();
-		},20);
 	}
 	,addImageItem: function(item,row) {
 		var container = window.document.createElement("div");
