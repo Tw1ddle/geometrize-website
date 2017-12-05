@@ -109,13 +109,13 @@ class Main {
 	private var keyFeaturesItems:Array<ImageItem> = [
 		new ImageItem(
 			resolveAssetPath("assets/images/$screenshotFolder/geometrize_image_task.png"),
-			"<i>Configurable, interactive image geometrization. Dozens of settings, with zoomable raster and vector-based views for watching your images being recreated as geometric primitives in realtime.</i>",
+			"<i>Interactive image geometrization with dozens of settings. Zoomable raster and vector-based views for watching images transform into geometric primitives in realtime.</i>",
 			ImageItemTypeId.APP_FEATURE,
 			platformDownloadLink
 		),
 		new ImageItem(
 			resolveAssetPath("assets/images/$screenshotFolder/geometrize_landing_page.png"),
-			"<i>Get started with hundreds of preset images, with preconfigured settings. Alternatively import your own photos, or copy-paste a link.</i>",
+			"<i>Get started with hundreds of preset images, with preconfigured settings. Or import your own photos - simply drag-drop an image, or copy-paste a link.</i>",
 			ImageItemTypeId.APP_FEATURE,
 			platformDownloadLink
 		),

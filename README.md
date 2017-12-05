@@ -12,4 +12,5 @@ Repository for the [landing page](http://www.geometrize.co.uk/) of [Geometrize](
 Open the project file in FlashDevelop and build for the JavaScript target. All recent Haxe versions are supported.
 
 ## Notes
+ * The image comparison sliders are based on [Cocoen](https://github.com/koenoe/cocoen) by [Koen Romers](https://github.com/koenoe).
  * Got an idea or suggestion? Open an issue on GitHub, or send Sam a message on [Twitter](https://twitter.com/Sam_Twidale).
