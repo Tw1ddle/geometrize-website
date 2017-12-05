@@ -29,7 +29,10 @@ var GalleryItem = function(beforeImagePath,afterImagePath,shapeName,shapeCount) 
 GalleryItem.__name__ = true;
 GalleryItem.prototype = {
 	get_caption: function() {
-		return "<i>" + " <a href=\"" + "http://www.geometrize.co.uk/" + this.afterImagePath + "\" target=\"_blank\">" + Std.string(this.shapeCount) + " " + this.shapeName + "</a>" + "</i>";
+		return "<i>" + Std.string(this.shapeCount) + " " + this.shapeName + "</i>";
+	}
+	,get_link: function() {
+		return "http://www.geometrize.co.uk/" + this.afterImagePath;
 	}
 };
 var PlatformDetector = function() { };
@@ -73,7 +76,7 @@ OperatingSystem.OTHER.toString = $estr;
 OperatingSystem.OTHER.__enum__ = OperatingSystem;
 var Main = function() {
 	this.moreProjectsItems = [new ImageItem("assets/images/haxe_demo_geometrized.png","<i>The web demo, turning images into shapes in your browser</i>",2,"http://www.samcodes.co.uk/project/geometrize-haxe-web/"),new ImageItem("assets/images/geometrize_tutorial_videos.png","<i>Quickstart videos and tutorials, for getting the most out of Geometrize</i>",2,"https://www.youtube.com/playlist?list=PLe9ogi_J4cFgcqLdpmPC7GdFV5ohJPEzN"),new ImageItem("assets/images/geometrize_twitter_bot.png","<i>The Twitter bot, which regularly tweets geometrized artwork</i>",2,"https://twitter.com/Geometrizer"),new ImageItem("assets/images/webgl_tweens_geometrize_demo.png","<i>The WebGL demo, showcasing animations made from shape data</i>",2,"http://tweens.geometrize.co.uk/"),new ImageItem("assets/images/resources_page_image.png","<i>Additional resources. Places to look for inspiration, related projects and free images</i>",2,"http://resources.geometrize.co.uk/")];
-	this.middleGalleryItems = [new GalleryItem(Main.resolveAssetPath("assets/images/examples/resting_shoes.png"),Main.resolveAssetPath("assets/images/examples/resting_shoes_geometrized.png"),"Rotated Ellipses",350),new GalleryItem(Main.resolveAssetPath("assets/images/examples/ridge.png"),Main.resolveAssetPath("assets/images/examples/ridge_geometrized.png"),"Circles",430),new GalleryItem(Main.resolveAssetPath("assets/images/examples/building.png"),Main.resolveAssetPath("assets/images/examples/building_geometrized.png"),"Circles",460),new GalleryItem(Main.resolveAssetPath("assets/images/examples/sunset.png"),Main.resolveAssetPath("assets/images/examples/sunset_geometrized.png"),"Triangles",350),new GalleryItem(Main.resolveAssetPath("assets/images/examples/man.png"),Main.resolveAssetPath("assets/images/examples/man_geometrized.png"),"Rotated Rectangles",400),new GalleryItem(Main.resolveAssetPath("assets/images/examples/boat.png"),Main.resolveAssetPath("assets/images/examples/boat_geometrized.png"),"Rotated Ellipses",370),new GalleryItem(Main.resolveAssetPath("assets/images/examples/wolf.png"),Main.resolveAssetPath("assets/images/examples/wolf_geometrized.png"),"Triangles",210),new GalleryItem(Main.resolveAssetPath("assets/images/examples/flower_another.png"),Main.resolveAssetPath("assets/images/examples/flower_another_geometrized.png"),"Rotated Ellipses",330),new GalleryItem(Main.resolveAssetPath("assets/images/examples/flowers.png"),Main.resolveAssetPath("assets/images/examples/flowers_geometrized.png"),"Rotated Ellipses",200),new GalleryItem(Main.resolveAssetPath("assets/images/examples/tree_under_clouds.png"),Main.resolveAssetPath("assets/images/examples/tree_under_clouds_geometrized.png"),"Ellipses",290),new GalleryItem(Main.resolveAssetPath("assets/images/examples/tree.png"),Main.resolveAssetPath("assets/images/examples/tree_geometrized.png"),"Rotated Ellipses",400)];
+	this.middleGalleryItems = [new GalleryItem(Main.resolveAssetPath("assets/images/examples/resting_shoes.png"),Main.resolveAssetPath("assets/images/examples/resting_shoes_geometrized.png"),"Rotated Ellipses",350),new GalleryItem(Main.resolveAssetPath("assets/images/examples/ridge.png"),Main.resolveAssetPath("assets/images/examples/ridge_geometrized.png"),"Circles",430),new GalleryItem(Main.resolveAssetPath("assets/images/examples/tree_under_clouds.png"),Main.resolveAssetPath("assets/images/examples/tree_under_clouds_geometrized.png"),"Ellipses",200),new GalleryItem(Main.resolveAssetPath("assets/images/examples/wolf.png"),Main.resolveAssetPath("assets/images/examples/wolf_geometrized.png"),"Triangles",210),new GalleryItem(Main.resolveAssetPath("assets/images/examples/building.png"),Main.resolveAssetPath("assets/images/examples/building_geometrized.png"),"Circles",460),new GalleryItem(Main.resolveAssetPath("assets/images/examples/sunset.png"),Main.resolveAssetPath("assets/images/examples/sunset_geometrized.png"),"Triangles",350),new GalleryItem(Main.resolveAssetPath("assets/images/examples/boat.png"),Main.resolveAssetPath("assets/images/examples/boat_geometrized.png"),"Rotated Ellipses",370),new GalleryItem(Main.resolveAssetPath("assets/images/examples/flower_another.png"),Main.resolveAssetPath("assets/images/examples/flower_another_geometrized.png"),"Rotated Ellipses",330),new GalleryItem(Main.resolveAssetPath("assets/images/examples/flowers.png"),Main.resolveAssetPath("assets/images/examples/flowers_geometrized.png"),"Rotated Ellipses",200),new GalleryItem(Main.resolveAssetPath("assets/images/examples/tree_under_clouds.png"),Main.resolveAssetPath("assets/images/examples/tree_under_clouds_geometrized.png"),"Ellipses",290),new GalleryItem(Main.resolveAssetPath("assets/images/examples/tree.png"),Main.resolveAssetPath("assets/images/examples/tree_geometrized.png"),"Rotated Ellipses",400)];
 	this.keyFeaturesItems = [new ImageItem(Main.resolveAssetPath("assets/images/$screenshotFolder/geometrize_image_task.png"),"<i>Configurable, interactive image geometrization. Dozens of settings, with zoomable raster and vector-based views for watching your images being recreated as geometric primitives in realtime.</i>",1,Main.platformDownloadLink),new ImageItem(Main.resolveAssetPath("assets/images/$screenshotFolder/geometrize_landing_page.png"),"<i>Get started with hundreds of preset images, with preconfigured settings. Alternatively import your own photos, or copy-paste a link.</i>",1,Main.platformDownloadLink),new ImageItem(Main.resolveAssetPath("assets/images/$screenshotFolder/geometrize_export_options.png"),"<i>Export the geometrized images as PNG, JPG, SVG, JSON, animated GIF, sequences of images, and more...</i>",1,Main.platformDownloadLink),new ImageItem(Main.resolveAssetPath("assets/images/$screenshotFolder/geometrize_scripting_panel.png"),"<i>Customize and reimplement the geometrization algorithm using the embedded ChaiScript scripting engine.</i>",1,Main.platformDownloadLink)];
 	this.startGalleryItems = [new GalleryItem(Main.resolveAssetPath("assets/images/examples/train.png"),Main.resolveAssetPath("assets/images/examples/train_geometrized.png"),"Rotated Ellipses",260),new GalleryItem(Main.resolveAssetPath("assets/images/examples/man.png"),Main.resolveAssetPath("assets/images/examples/man_geometrized.png"),"Rotated Rectangles",440),new GalleryItem(Main.resolveAssetPath("assets/images/examples/rose.png"),Main.resolveAssetPath("assets/images/examples/rose_geometrized.png"),"Triangles",240)];
 	window.onload = $bind(this,this.onWindowLoaded);
@@ -289,6 +292,7 @@ Main.prototype = {
 		if(item.link != "") {
 			var anchor = window.document.createElement("a");
 			anchor.href = item.link;
+			anchor.target = "_blank";
 			anchor.appendChild(image);
 			anchor.appendChild(captionText);
 			container.appendChild(anchor);
@@ -303,16 +307,25 @@ Main.prototype = {
 		container.className = "container galleryitemcontainer";
 		var twentyTwenty = window.document.createElement("div");
 		twentyTwenty.className = "twentytwenty galleryitem";
-		container.appendChild(twentyTwenty);
 		var captionText = window.document.createElement("p");
 		captionText.innerHTML = item.get_caption();
-		container.appendChild(captionText);
 		var beforeImage = window.document.createElement("img");
 		beforeImage.src = item.beforeImagePath;
 		var afterImage = window.document.createElement("img");
 		afterImage.src = item.afterImagePath;
 		twentyTwenty.appendChild(beforeImage);
 		twentyTwenty.appendChild(afterImage);
+		if(item.get_link() != "http://www.geometrize.co.uk/") {
+			var anchor = window.document.createElement("a");
+			anchor.href = item.get_link();
+			anchor.target = "_blank";
+			anchor.appendChild(twentyTwenty);
+			anchor.appendChild(captionText);
+			container.appendChild(anchor);
+		} else {
+			container.appendChild(twentyTwenty);
+			container.appendChild(captionText);
+		}
 		row.appendChild(container);
 	}
 };

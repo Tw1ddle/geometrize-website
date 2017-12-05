@@ -51,7 +51,11 @@ class GalleryItem {
 	public var afterImagePath(default,null):String;
 	public var caption(get, null):String;
 	private function get_caption():String {
-		return "<i>" + ' <a href="' + Main.geometrizeUrl + afterImagePath + '" target="_blank">' + Std.string(shapeCount) + " " + shapeName + "</a>" + "</i>";
+		return "<i>" + Std.string(shapeCount) + " " + shapeName + "</i>";
+	}
+	public var link(get, null):String;
+	private function get_link():String {
+		return Main.geometrizeUrl + afterImagePath;
 	}
 	public var shapeName(default, null):String;
 	public var shapeCount(default, null):Int;
@@ -142,6 +146,18 @@ class Main {
 			430
 		),
 		new GalleryItem(
+			resolveAssetPath("assets/images/examples/tree_under_clouds.png"),
+			resolveAssetPath("assets/images/examples/tree_under_clouds_geometrized.png"),
+			"Ellipses",
+			200
+		),
+		new GalleryItem(
+			resolveAssetPath("assets/images/examples/wolf.png"),
+			resolveAssetPath("assets/images/examples/wolf_geometrized.png"),
+			"Triangles",
+			210
+		),
+		new GalleryItem(
 			resolveAssetPath("assets/images/examples/building.png"),
 			resolveAssetPath("assets/images/examples/building_geometrized.png"),
 			"Circles",
@@ -154,22 +170,10 @@ class Main {
 			350
 		),
 		new GalleryItem(
-			resolveAssetPath("assets/images/examples/man.png"),
-			resolveAssetPath("assets/images/examples/man_geometrized.png"),
-			"Rotated Rectangles",
-			400
-		),
-		new GalleryItem(
 			resolveAssetPath("assets/images/examples/boat.png"),
 			resolveAssetPath("assets/images/examples/boat_geometrized.png"),
 			"Rotated Ellipses",
 			370
-		),
-		new GalleryItem(
-			resolveAssetPath("assets/images/examples/wolf.png"),
-			resolveAssetPath("assets/images/examples/wolf_geometrized.png"),
-			"Triangles",
-			210
 		),
 		new GalleryItem(
 			resolveAssetPath("assets/images/examples/flower_another.png"),
@@ -293,6 +297,7 @@ class Main {
 		if (item.link != "") {
 			var anchor = js.Browser.document.createAnchorElement();
 			anchor.href = item.link;
+			anchor.target = "_blank";
 			
 			anchor.appendChild(image);
 			anchor.appendChild(captionText);
@@ -317,12 +322,8 @@ class Main {
 		var twentyTwenty = js.Browser.document.createDivElement();
 		twentyTwenty.className = "twentytwenty galleryitem";
 		
-		container.appendChild(twentyTwenty);
-		
 		var captionText = js.Browser.document.createParagraphElement();
 		captionText.innerHTML = item.caption;
-		
-		container.appendChild(captionText);
 		
 		var beforeImage = js.Browser.document.createImageElement();
 		beforeImage.src = item.beforeImagePath;
@@ -332,6 +333,19 @@ class Main {
 		
 		twentyTwenty.appendChild(beforeImage);
 		twentyTwenty.appendChild(afterImage);
+		
+		if (item.link != Main.geometrizeUrl) {
+			var anchor = js.Browser.document.createAnchorElement();
+			anchor.href = item.link;
+			anchor.target = "_blank";
+			
+			anchor.appendChild(twentyTwenty);
+			anchor.appendChild(captionText);
+			container.appendChild(anchor);
+		} else {
+			container.appendChild(twentyTwenty);
+			container.appendChild(captionText);
+		}
 		
 		row.appendChild(container);
 	}
