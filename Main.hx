@@ -178,10 +178,22 @@ class Main {
 			330
 		),
 		new GalleryItem(
-			resolveAssetPath("assets/images/examples/borrowdale_autumn.png"),
-			resolveAssetPath("assets/images/examples/borrowdale_autumn_geometrized.png"),
+			resolveAssetPath("assets/images/examples/flowers.png"),
+			resolveAssetPath("assets/images/examples/flowers_geometrized.png"),
 			"Rotated Ellipses",
-			500
+			200
+		),
+		new GalleryItem(
+			resolveAssetPath("assets/images/examples/tree_under_clouds.png"),
+			resolveAssetPath("assets/images/examples/tree_under_clouds_geometrized.png"),
+			"Ellipses",
+			290
+		),
+		new GalleryItem(
+			resolveAssetPath("assets/images/examples/tree.png"),
+			resolveAssetPath("assets/images/examples/tree_geometrized.png"),
+			"Rotated Ellipses",
+			400
 		)
 	];
 	private var moreProjectsItems:Array<ImageItem> = [
