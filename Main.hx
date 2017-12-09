@@ -439,7 +439,7 @@ class Main {
 			case OperatingSystem.WINDOWS:
 				"Windows";
 			case OperatingSystem.OSX, OperatingSystem.IOS:
-				"Mac OSX";
+				"Mac OS X";
 			case OperatingSystem.LINUX:
 				"Linux";
 			default:
