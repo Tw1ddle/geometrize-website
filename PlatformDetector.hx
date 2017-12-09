@@ -19,16 +19,16 @@ class PlatformDetector {
 			return OperatingSystem.WINDOWS;
 		}
 		
-		if (js.Browser.navigator.userAgent.indexOf("OSX") != -1) {
+		if (js.Browser.navigator.userAgent.indexOf("Mac") != -1 || js.Browser.navigator.userAgent.indexOf("OSX") != -1) {
 			return OperatingSystem.OSX;
-		}
-		
-		if (js.Browser.navigator.userAgent.indexOf("Linux") != -1) {
-			return OperatingSystem.LINUX;
 		}
 		
 		if (js.Browser.navigator.userAgent.indexOf("Android") != -1) {
 			return OperatingSystem.ANDROID;
+		}
+		
+		if (js.Browser.navigator.userAgent.indexOf("Linux") != -1) {
+			return OperatingSystem.LINUX;
 		}
 		
 		if (js.Browser.navigator.userAgent.indexOf("iOS") != -1) {
