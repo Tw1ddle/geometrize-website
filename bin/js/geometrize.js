@@ -32,7 +32,7 @@ GalleryItem.prototype = {
 		return "<i>" + Std.string(this.shapeCount) + " " + this.shapeName + "</i>";
 	}
 	,get_link: function() {
-		return "http://www.geometrize.co.uk/" + this.afterImagePath;
+		return "http://www.geometrize.co.uk/" + this.beforeImagePath;
 	}
 };
 var PlatformDetector = function() { };

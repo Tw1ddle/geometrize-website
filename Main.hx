@@ -55,7 +55,7 @@ class GalleryItem {
 	}
 	public var link(get, null):String;
 	private function get_link():String {
-		return Main.geometrizeUrl + afterImagePath;
+		return Main.geometrizeUrl + beforeImagePath;
 	}
 	public var shapeName(default, null):String;
 	public var shapeCount(default, null):Int;

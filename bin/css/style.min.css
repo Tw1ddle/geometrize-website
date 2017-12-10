@@ -1,7 +1,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: #000000;
-    color: #000000;
+    color: #222222;
     font-size: 13px;
 }
 
@@ -37,13 +37,13 @@ p {
 }
 
 a {
-    color: #000000;
+    color: #222222;
     font-weight: 600;
     text-decoration: none;
 }
 
 p a {
-    color: #000000;
+    color: #222222;
     text-decoration: none;
 }
 
@@ -90,7 +90,7 @@ a:hover {
 }
 
 .container p {
-    color: #000000;
+    color: #222222;
     text-decoration: none;
 }
 
@@ -98,7 +98,7 @@ a:hover {
     margin: 10px 10px 10px 10px;
     padding: 10px 10px 0px 10px;
     background: #ffffff;
-    color: #000000;
+    color: #222222;
     position:relative;
     display: inline-block;
 }
@@ -119,7 +119,7 @@ a:hover {
     margin: 10px 10px 10px 10px;
     padding: 10px 10px 0px 10px;
     background: #ffffff;
-    color: #000000;
+    color: #222222;
     position:relative;
     display: inline-block;
 }
@@ -179,7 +179,7 @@ a:hover {
     padding: 20px;
     margin: 20px 10px 0px 10px;
     background: #ffffff;
-    color: #000000;
+    color: #222222;
     font-size: 21px;
     font-weight: bold;
     line-height: 1.3em;
