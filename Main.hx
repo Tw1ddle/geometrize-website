@@ -51,7 +51,7 @@ class GalleryItem {
 	public var afterImagePath(default,null):String;
 	public var caption(get, null):String;
 	private function get_caption():String {
-		return "<i>" + Std.string(shapeCount) + " " + shapeName + "</i>";
+		return Std.string(shapeCount) + " " + shapeName;
 	}
 	public var link(get, null):String;
 	private function get_link():String {
@@ -109,25 +109,25 @@ class Main {
 	private var keyFeaturesItems:Array<ImageItem> = [
 		new ImageItem(
 			resolveAssetPath("assets/images/$screenshotFolder/geometrize_image_task.png"),
-			"<i>Interactive image geometrization with dozens of settings. Zoomable raster and vector-based views for watching images transform into geometric primitives in realtime</i>",
+			"Interactive image geometrization with dozens of settings. Zoomable raster and vector-based views for watching images transform into geometric primitives in realtime",
 			ImageItemTypeId.APP_FEATURE,
 			platformDownloadLink
 		),
 		new ImageItem(
 			resolveAssetPath("assets/images/$screenshotFolder/geometrize_landing_page.png"),
-			"<i>Get started with hundreds of preset images, with preconfigured settings. Or import your own photos - simply drag-drop an image, or copy-paste a link</i>",
+			"Get started with hundreds of preset images, with preconfigured settings. Or import your own photos - simply drag-drop an image, or copy-paste a link",
 			ImageItemTypeId.APP_FEATURE,
 			platformDownloadLink
 		),
 		new ImageItem(
 			resolveAssetPath("assets/images/$screenshotFolder/geometrize_export_options.png"),
-			"<i>Export the geometrized images as PNG, JPG, SVG, JSON, animated GIF, sequences of images, and more...</i>",
+			"Export the geometrized images as PNG, JPG, SVG, JSON, animated GIF, sequences of images, and more...",
 			ImageItemTypeId.APP_FEATURE,
 			platformDownloadLink
 		),
 		new ImageItem(
 			resolveAssetPath("assets/images/$screenshotFolder/geometrize_scripting_panel.png"),
-			"<i>Customize and reimplement the geometrization algorithm using the embedded ChaiScript scripting engine</i>",
+			"Customize and reimplement the geometrization algorithm using the embedded ChaiScript scripting engine",
 			ImageItemTypeId.APP_FEATURE,
 			platformDownloadLink
 		)
@@ -203,31 +203,31 @@ class Main {
 	private var moreProjectsItems:Array<ImageItem> = [
 		new ImageItem(
 			"assets/images/haxe_demo_geometrized.png",
-			"<i>The web demo, turning images into shapes in your browser</i>",
+			"The web demo, turning images into shapes in your browser",
 			ImageItemTypeId.APP_RESOURCE,
 			"http://www.samcodes.co.uk/project/geometrize-haxe-web/"
 		),
 		new ImageItem(
 			"assets/images/geometrize_tutorial_videos.png",
-			"<i>Quickstart videos and tutorials, for getting the most out of Geometrize</i>",
+			"Quickstart videos and tutorials, for getting the most out of Geometrize",
 			ImageItemTypeId.APP_RESOURCE,
 			"https://www.youtube.com/playlist?list=PLe9ogi_J4cFgcqLdpmPC7GdFV5ohJPEzN"
 		),
 		new ImageItem(
 			"assets/images/geometrize_twitter_bot.png",
-			"<i>The Twitter bot, which regularly tweets geometrized artwork</i>",
+			"The Twitter bot, which regularly tweets geometrized artwork",
 			ImageItemTypeId.APP_RESOURCE,
 			"https://twitter.com/Geometrizer"
 		),
 		new ImageItem(
 			"assets/images/webgl_tweens_geometrize_demo.png",
-			"<i>The WebGL demo, showcasing animations made from shape data</i>",
+			"The WebGL demo, showcasing animations made from shape data",
 			ImageItemTypeId.APP_RESOURCE,
 			"http://tweens.geometrize.co.uk/"
 		),
 		new ImageItem(
 			"assets/images/resources_page_image.png",
-			"<i>Additional resources. Places to find inspiration, related projects and free images</i>",
+			"Additional resources. Places to find inspiration, related projects and free images",
 			ImageItemTypeId.APP_RESOURCE,
 			"http://resources.geometrize.co.uk/"
 		)
@@ -360,19 +360,19 @@ class Main {
 	private static inline function makeDownloadSection(container:Element):Void {
 		var download = js.Browser.document.createAnchorElement();
 		download.className = "button stitched";
-		download.innerText = "Download For " + getOperatingSystemName(PlatformDetector.getOperatingSystem());
+		download.innerText = "Download";
 		download.href = getDownloadLinkForOperatingSystem(PlatformDetector.getOperatingSystem());
 		download.target = "_blank";
 		
 		var getCode = js.Browser.document.createAnchorElement();
 		getCode.className = "button stitched";
-		getCode.innerText = "Download Source Code";
+		getCode.innerText = "Source Code";
 		getCode.href = "https://github.com/Tw1ddle/geometrize";
 		getCode.target = "_blank";
 		
 		var webDemo = js.Browser.document.createAnchorElement();
 		webDemo.className = "button stitched";
-		webDemo.innerText = "Run Web Demo";
+		webDemo.innerText = "Web Demo";
 		webDemo.href = "http://www.samcodes.co.uk/project/geometrize-haxe-web/";
 		webDemo.target = "_blank";
 		

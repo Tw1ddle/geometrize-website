@@ -29,7 +29,7 @@ var GalleryItem = function(beforeImagePath,afterImagePath,shapeName,shapeCount) 
 GalleryItem.__name__ = true;
 GalleryItem.prototype = {
 	get_caption: function() {
-		return "<i>" + Std.string(this.shapeCount) + " " + this.shapeName + "</i>";
+		return Std.string(this.shapeCount) + " " + this.shapeName;
 	}
 	,get_link: function() {
 		return "http://www.geometrize.co.uk/" + this.beforeImagePath;
@@ -75,9 +75,9 @@ OperatingSystem.OTHER = ["OTHER",5];
 OperatingSystem.OTHER.toString = $estr;
 OperatingSystem.OTHER.__enum__ = OperatingSystem;
 var Main = function() {
-	this.moreProjectsItems = [new ImageItem("assets/images/haxe_demo_geometrized.png","<i>The web demo, turning images into shapes in your browser</i>",2,"http://www.samcodes.co.uk/project/geometrize-haxe-web/"),new ImageItem("assets/images/geometrize_tutorial_videos.png","<i>Quickstart videos and tutorials, for getting the most out of Geometrize</i>",2,"https://www.youtube.com/playlist?list=PLe9ogi_J4cFgcqLdpmPC7GdFV5ohJPEzN"),new ImageItem("assets/images/geometrize_twitter_bot.png","<i>The Twitter bot, which regularly tweets geometrized artwork</i>",2,"https://twitter.com/Geometrizer"),new ImageItem("assets/images/webgl_tweens_geometrize_demo.png","<i>The WebGL demo, showcasing animations made from shape data</i>",2,"http://tweens.geometrize.co.uk/"),new ImageItem("assets/images/resources_page_image.png","<i>Additional resources. Places to find inspiration, related projects and free images</i>",2,"http://resources.geometrize.co.uk/")];
+	this.moreProjectsItems = [new ImageItem("assets/images/haxe_demo_geometrized.png","The web demo, turning images into shapes in your browser",2,"http://www.samcodes.co.uk/project/geometrize-haxe-web/"),new ImageItem("assets/images/geometrize_tutorial_videos.png","Quickstart videos and tutorials, for getting the most out of Geometrize",2,"https://www.youtube.com/playlist?list=PLe9ogi_J4cFgcqLdpmPC7GdFV5ohJPEzN"),new ImageItem("assets/images/geometrize_twitter_bot.png","The Twitter bot, which regularly tweets geometrized artwork",2,"https://twitter.com/Geometrizer"),new ImageItem("assets/images/webgl_tweens_geometrize_demo.png","The WebGL demo, showcasing animations made from shape data",2,"http://tweens.geometrize.co.uk/"),new ImageItem("assets/images/resources_page_image.png","Additional resources. Places to find inspiration, related projects and free images",2,"http://resources.geometrize.co.uk/")];
 	this.middleGalleryItems = [new GalleryItem(Main.resolveAssetPath("assets/images/examples/resting_shoes_geometrized.png"),Main.resolveAssetPath("assets/images/examples/resting_shoes.png"),"Rotated Ellipses",350),new GalleryItem(Main.resolveAssetPath("assets/images/examples/ridge_geometrized.png"),Main.resolveAssetPath("assets/images/examples/ridge.png"),"Circles",430),new GalleryItem(Main.resolveAssetPath("assets/images/examples/tree_under_clouds_geometrized.png"),Main.resolveAssetPath("assets/images/examples/tree_under_clouds.png"),"Ellipses",200),new GalleryItem(Main.resolveAssetPath("assets/images/examples/wolf_geometrized.png"),Main.resolveAssetPath("assets/images/examples/wolf.png"),"Triangles",210),new GalleryItem(Main.resolveAssetPath("assets/images/examples/building_geometrized.png"),Main.resolveAssetPath("assets/images/examples/building.png"),"Circles",460),new GalleryItem(Main.resolveAssetPath("assets/images/examples/sunset_geometrized.png"),Main.resolveAssetPath("assets/images/examples/sunset.png"),"Triangles",350),new GalleryItem(Main.resolveAssetPath("assets/images/examples/boat_geometrized.png"),Main.resolveAssetPath("assets/images/examples/boat.png"),"Rotated Ellipses",370),new GalleryItem(Main.resolveAssetPath("assets/images/examples/flower_another_geometrized.png"),Main.resolveAssetPath("assets/images/examples/flower_another.png"),"Rotated Ellipses",330),new GalleryItem(Main.resolveAssetPath("assets/images/examples/flowers_geometrized.png"),Main.resolveAssetPath("assets/images/examples/flowers.png"),"Rotated Ellipses",200),new GalleryItem(Main.resolveAssetPath("assets/images/examples/tree_under_clouds_geometrized.png"),Main.resolveAssetPath("assets/images/examples/tree_under_clouds.png"),"Ellipses",290),new GalleryItem(Main.resolveAssetPath("assets/images/examples/tree_geometrized.png"),Main.resolveAssetPath("assets/images/examples/tree.png"),"Rotated Ellipses",400)];
-	this.keyFeaturesItems = [new ImageItem(Main.resolveAssetPath("assets/images/$screenshotFolder/geometrize_image_task.png"),"<i>Interactive image geometrization with dozens of settings. Zoomable raster and vector-based views for watching images transform into geometric primitives in realtime</i>",1,Main.platformDownloadLink),new ImageItem(Main.resolveAssetPath("assets/images/$screenshotFolder/geometrize_landing_page.png"),"<i>Get started with hundreds of preset images, with preconfigured settings. Or import your own photos - simply drag-drop an image, or copy-paste a link</i>",1,Main.platformDownloadLink),new ImageItem(Main.resolveAssetPath("assets/images/$screenshotFolder/geometrize_export_options.png"),"<i>Export the geometrized images as PNG, JPG, SVG, JSON, animated GIF, sequences of images, and more...</i>",1,Main.platformDownloadLink),new ImageItem(Main.resolveAssetPath("assets/images/$screenshotFolder/geometrize_scripting_panel.png"),"<i>Customize and reimplement the geometrization algorithm using the embedded ChaiScript scripting engine</i>",1,Main.platformDownloadLink)];
+	this.keyFeaturesItems = [new ImageItem(Main.resolveAssetPath("assets/images/$screenshotFolder/geometrize_image_task.png"),"Interactive image geometrization with dozens of settings. Zoomable raster and vector-based views for watching images transform into geometric primitives in realtime",1,Main.platformDownloadLink),new ImageItem(Main.resolveAssetPath("assets/images/$screenshotFolder/geometrize_landing_page.png"),"Get started with hundreds of preset images, with preconfigured settings. Or import your own photos - simply drag-drop an image, or copy-paste a link",1,Main.platformDownloadLink),new ImageItem(Main.resolveAssetPath("assets/images/$screenshotFolder/geometrize_export_options.png"),"Export the geometrized images as PNG, JPG, SVG, JSON, animated GIF, sequences of images, and more...",1,Main.platformDownloadLink),new ImageItem(Main.resolveAssetPath("assets/images/$screenshotFolder/geometrize_scripting_panel.png"),"Customize and reimplement the geometrization algorithm using the embedded ChaiScript scripting engine",1,Main.platformDownloadLink)];
 	this.startGalleryItems = [new GalleryItem(Main.resolveAssetPath("assets/images/examples/train_geometrized.png"),Main.resolveAssetPath("assets/images/examples/train.png"),"Rotated Ellipses",260),new GalleryItem(Main.resolveAssetPath("assets/images/examples/man_geometrized.png"),Main.resolveAssetPath("assets/images/examples/man.png"),"Rotated Rectangles",440),new GalleryItem(Main.resolveAssetPath("assets/images/examples/rose_geometrized.png"),Main.resolveAssetPath("assets/images/examples/rose.png"),"Triangles",240)];
 	window.onload = $bind(this,this.onWindowLoaded);
 };
@@ -188,32 +188,18 @@ Main.prototype = {
 		var container = Main.startDownloadContainer;
 		var download = window.document.createElement("a");
 		download.className = "button stitched";
-		var tmp;
-		switch(PlatformDetector.getOperatingSystem()[1]) {
-		case 0:
-			tmp = "Windows";
-			break;
-		case 1:case 4:
-			tmp = "Mac OS X";
-			break;
-		case 2:
-			tmp = "Linux";
-			break;
-		default:
-			tmp = "Windows";
-		}
-		download.innerText = "Download For " + tmp;
+		download.innerText = "Download";
 		var os1 = PlatformDetector.getOperatingSystem();
 		download.href = "https://github.com/Tw1ddle/geometrize/releases";
 		download.target = "_blank";
 		var getCode = window.document.createElement("a");
 		getCode.className = "button stitched";
-		getCode.innerText = "Download Source Code";
+		getCode.innerText = "Source Code";
 		getCode.href = "https://github.com/Tw1ddle/geometrize";
 		getCode.target = "_blank";
 		var webDemo = window.document.createElement("a");
 		webDemo.className = "button stitched";
-		webDemo.innerText = "Run Web Demo";
+		webDemo.innerText = "Web Demo";
 		webDemo.href = "http://www.samcodes.co.uk/project/geometrize-haxe-web/";
 		webDemo.target = "_blank";
 		var span = window.document.createElement("span");
@@ -225,32 +211,18 @@ Main.prototype = {
 		var container1 = Main.endDownloadContainer;
 		var download1 = window.document.createElement("a");
 		download1.className = "button stitched";
-		var tmp1;
-		switch(PlatformDetector.getOperatingSystem()[1]) {
-		case 0:
-			tmp1 = "Windows";
-			break;
-		case 1:case 4:
-			tmp1 = "Mac OS X";
-			break;
-		case 2:
-			tmp1 = "Linux";
-			break;
-		default:
-			tmp1 = "Windows";
-		}
-		download1.innerText = "Download For " + tmp1;
+		download1.innerText = "Download";
 		var os2 = PlatformDetector.getOperatingSystem();
 		download1.href = "https://github.com/Tw1ddle/geometrize/releases";
 		download1.target = "_blank";
 		var getCode1 = window.document.createElement("a");
 		getCode1.className = "button stitched";
-		getCode1.innerText = "Download Source Code";
+		getCode1.innerText = "Source Code";
 		getCode1.href = "https://github.com/Tw1ddle/geometrize";
 		getCode1.target = "_blank";
 		var webDemo1 = window.document.createElement("a");
 		webDemo1.className = "button stitched";
-		webDemo1.innerText = "Run Web Demo";
+		webDemo1.innerText = "Web Demo";
 		webDemo1.href = "http://www.samcodes.co.uk/project/geometrize-haxe-web/";
 		webDemo1.target = "_blank";
 		var span1 = window.document.createElement("span");

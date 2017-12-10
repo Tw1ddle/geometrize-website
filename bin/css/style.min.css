@@ -183,11 +183,22 @@ a:hover {
     font-size: 21px;
     font-weight: bold;
     line-height: 1.3em;
-    border-radius: 10px;
     box-shadow: 0 0 0 4px #ffffff, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
     font-weight: normal;
 }
 
 .stitched:hover {
     box-shadow: 0 0 0 6px #ffffff, 2px 1px 6px 6px rgba(10, 10, 0, 0.5);
+}
+
+#moreinfo, #support {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 80%;
+}
+
+footer {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 80%;
 }
