@@ -88,20 +88,20 @@ class Main {
 	
 	private var startGalleryItems:Array<GalleryItem> = [
 		new GalleryItem(
-			resolveAssetPath("assets/images/examples/train.png"),
 			resolveAssetPath("assets/images/examples/train_geometrized.png"),
+			resolveAssetPath("assets/images/examples/train.png"),
 			"Rotated Ellipses",
 			260
 		),
 		new GalleryItem(
-			resolveAssetPath("assets/images/examples/man.png"),
 			resolveAssetPath("assets/images/examples/man_geometrized.png"),
+			resolveAssetPath("assets/images/examples/man.png"),
 			"Rotated Rectangles",
 			440
 		),
 		new GalleryItem(
-			resolveAssetPath("assets/images/examples/rose.png"),
 			resolveAssetPath("assets/images/examples/rose_geometrized.png"),
+			resolveAssetPath("assets/images/examples/rose.png"),
 			"Triangles",
 			240
 		)
@@ -134,68 +134,68 @@ class Main {
 	];
 	private var middleGalleryItems:Array<GalleryItem> = [
 		new GalleryItem(
-			resolveAssetPath("assets/images/examples/resting_shoes.png"),
 			resolveAssetPath("assets/images/examples/resting_shoes_geometrized.png"),
+			resolveAssetPath("assets/images/examples/resting_shoes.png"),
 			"Rotated Ellipses",
 			350
 		),
 		new GalleryItem(
-			resolveAssetPath("assets/images/examples/ridge.png"),
 			resolveAssetPath("assets/images/examples/ridge_geometrized.png"),
+			resolveAssetPath("assets/images/examples/ridge.png"),
 			"Circles",
 			430
 		),
 		new GalleryItem(
-			resolveAssetPath("assets/images/examples/tree_under_clouds.png"),
 			resolveAssetPath("assets/images/examples/tree_under_clouds_geometrized.png"),
+			resolveAssetPath("assets/images/examples/tree_under_clouds.png"),
 			"Ellipses",
 			200
 		),
 		new GalleryItem(
-			resolveAssetPath("assets/images/examples/wolf.png"),
 			resolveAssetPath("assets/images/examples/wolf_geometrized.png"),
+			resolveAssetPath("assets/images/examples/wolf.png"),
 			"Triangles",
 			210
 		),
 		new GalleryItem(
-			resolveAssetPath("assets/images/examples/building.png"),
 			resolveAssetPath("assets/images/examples/building_geometrized.png"),
+			resolveAssetPath("assets/images/examples/building.png"),
 			"Circles",
 			460
 		),
 		new GalleryItem(
-			resolveAssetPath("assets/images/examples/sunset.png"),
 			resolveAssetPath("assets/images/examples/sunset_geometrized.png"),
+			resolveAssetPath("assets/images/examples/sunset.png"),
 			"Triangles",
 			350
 		),
 		new GalleryItem(
-			resolveAssetPath("assets/images/examples/boat.png"),
 			resolveAssetPath("assets/images/examples/boat_geometrized.png"),
+			resolveAssetPath("assets/images/examples/boat.png"),
 			"Rotated Ellipses",
 			370
 		),
 		new GalleryItem(
-			resolveAssetPath("assets/images/examples/flower_another.png"),
 			resolveAssetPath("assets/images/examples/flower_another_geometrized.png"),
+			resolveAssetPath("assets/images/examples/flower_another.png"),
 			"Rotated Ellipses",
 			330
 		),
 		new GalleryItem(
-			resolveAssetPath("assets/images/examples/flowers.png"),
 			resolveAssetPath("assets/images/examples/flowers_geometrized.png"),
+			resolveAssetPath("assets/images/examples/flowers.png"),
 			"Rotated Ellipses",
 			200
 		),
 		new GalleryItem(
-			resolveAssetPath("assets/images/examples/tree_under_clouds.png"),
 			resolveAssetPath("assets/images/examples/tree_under_clouds_geometrized.png"),
+			resolveAssetPath("assets/images/examples/tree_under_clouds.png"),
 			"Ellipses",
 			290
 		),
 		new GalleryItem(
-			resolveAssetPath("assets/images/examples/tree.png"),
 			resolveAssetPath("assets/images/examples/tree_geometrized.png"),
+			resolveAssetPath("assets/images/examples/tree.png"),
 			"Rotated Ellipses",
 			400
 		)
