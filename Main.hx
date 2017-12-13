@@ -33,7 +33,13 @@ class ImageItem {
 	public var imagePath(default, null):String;
 	public var caption(default, null):String;
 	public var typeId(default, null):ImageItemTypeId;
-	public var link(default, null):String;
+	public var link(get, null):String;
+	public function get_link():String {
+		if (link.length != 0) {
+			return link;
+		}
+		return Main.geometrizeUrl + imagePath;
+	}
 }
 
 /**
@@ -108,28 +114,24 @@ class Main {
 	];
 	private var keyFeaturesItems:Array<ImageItem> = [
 		new ImageItem(
-			resolveAssetPath("assets/images/$screenshotFolder/geometrize_image_task.png"),
-			"Interactive image geometrization with dozens of settings. Zoomable raster and vector-based views for watching images transform into geometric primitives in realtime",
-			ImageItemTypeId.APP_FEATURE,
-			platformDownloadLink
+			resolveAssetPath("assets/images/$screenshotFolder/geometrize_landing_page.png"),
+			"Get started with hundreds of images with preconfigured settings. Or import your own photos - simply drag-drop an image, or copy-paste a link",
+			ImageItemTypeId.APP_FEATURE
 		),
 		new ImageItem(
-			resolveAssetPath("assets/images/$screenshotFolder/geometrize_landing_page.png"),
-			"Get started with hundreds of preset images, with preconfigured settings. Or import your own photos - simply drag-drop an image, or copy-paste a link",
-			ImageItemTypeId.APP_FEATURE,
-			platformDownloadLink
+			resolveAssetPath("assets/images/$screenshotFolder/geometrize_image_task.png"),
+			"Interactive image geometrization with dozens of settings. Zoomable raster and vector-based views for watching images transform into geometric primitives in realtime",
+			ImageItemTypeId.APP_FEATURE
 		),
 		new ImageItem(
 			resolveAssetPath("assets/images/$screenshotFolder/geometrize_export_options.png"),
-			"Export the geometrized images as PNG, JPG, SVG, JSON, animated GIF, sequences of images, and more...",
-			ImageItemTypeId.APP_FEATURE,
-			platformDownloadLink
+			"Export the geometrized images as PNG, JPG, SVG, JSON, sequences of images, and more...",
+			ImageItemTypeId.APP_FEATURE
 		),
 		new ImageItem(
 			resolveAssetPath("assets/images/$screenshotFolder/geometrize_scripting_panel.png"),
-			"Customize and reimplement the geometrization algorithm using the embedded ChaiScript scripting engine",
-			ImageItemTypeId.APP_FEATURE,
-			platformDownloadLink
+			"Customize the geometrization algorithm using the embedded ChaiScript scripting engine",
+			ImageItemTypeId.APP_FEATURE
 		)
 	];
 	private var middleGalleryItems:Array<GalleryItem> = [
