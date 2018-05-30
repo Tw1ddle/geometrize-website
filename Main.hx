@@ -408,7 +408,7 @@ class Main {
 	}
 	
 	private static inline function getDownloadLinkForOperatingSystem(os:OperatingSystem):String {
-		return "https://github.com/Tw1ddle/geometrize/releases"; //TODO!!!
+		return "https://github.com/Tw1ddle/geometrize/releases/latest"; //TODO
 		/*
 		return switch(os) {
 			case OperatingSystem.WINDOWS:
