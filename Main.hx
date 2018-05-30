@@ -2,18 +2,23 @@ package;
 
 import PlatformDetector;
 import haxe.Constraints;
+import haxe.Http;
+import haxe.Json;
+import haxe.ds.IntMap;
+import haxe.ds.ObjectMap;
 import js.Browser;
 import js.html.Element;
 import js.html.DivElement;
 import js.html.InputElement;
 import js.html.ButtonElement;
 import js.html.AnchorElement;
+import haxe.ds.EnumValueMap;
 
 using StringTools;
 
 // Automatic HTML code completion, you need to point these to your HTML
 @:build(CodeCompletion.buildLocalFile("bin/index.html"))
-//@:build(CodeCompletion.buildUrl("http://www.geometrize.co.uk/"))
+//@:build(CodeCompletion.buildUrl("https://www.geometrize.co.uk/"))
 class ID {}
 
 /**
@@ -69,14 +74,16 @@ class GalleryItem {
 
 /**
  * A one-page landing site for Geometrize, a tool for geometrizing images into geometric primitives.
- * @author Sam Twidale (http://www.geometrize.co.uk/)
+ * @author Sam Twidale (https://www.geometrize.co.uk/)
  */
 class Main {
-	public static inline var geometrizeUrl:String = "http://www.geometrize.co.uk/"; // URL of the hosted website
+	public static inline var geometrizeUrl:String = "https://www.geometrize.co.uk/"; // URL of the hosted website
+	public static inline var geometrizeReleasesUrl:String = "https://github.com/Tw1ddle/geometrize/releases/latest"; // Geometrize releases URL
+	public static inline var geometrizeReleasesRequestUrl:String = "https://api.github.com/repos/Tw1ddle/geometrize/releases/latest"; // GitHub API URL to request Geometrize latest release info
 	
 	// Helpers to resolve page asset paths based on platform/OS etc
 	private static var operatingSystem:OperatingSystem = PlatformDetector.getOperatingSystem();
-	private static var platformDownloadLink:String = getDownloadLinkForOperatingSystem(PlatformDetector.getOperatingSystem());
+	private static var platformDownloadLinks = new EnumValueMap<OperatingSystem, String>();
 	private static function resolveAssetPath(path:String):String {
 		return path.replace("$screenshotFolder", getScreenshotsFolderNameForOperatingSystem(operatingSystem));
 	}
@@ -207,7 +214,7 @@ class Main {
 			"assets/images/haxe_demo_geometrized.png",
 			"The web demo, turning images into shapes in your browser",
 			ImageItemTypeId.APP_RESOURCE,
-			"http://www.samcodes.co.uk/project/geometrize-haxe-web/"
+			"https://www.samcodes.co.uk/project/geometrize-haxe-web/"
 		),
 		new ImageItem(
 			"assets/images/geometrize_tutorial_videos.png",
@@ -225,13 +232,13 @@ class Main {
 			"assets/images/webgl_tweens_geometrize_demo.png",
 			"The WebGL demo, showcasing animations made from shape data",
 			ImageItemTypeId.APP_RESOURCE,
-			"http://tweens.geometrize.co.uk/"
+			"https://tweens.geometrize.co.uk/"
 		),
 		new ImageItem(
 			"assets/images/resources_page_image.png",
 			"Additional resources. Places to find inspiration, related projects and free images",
 			ImageItemTypeId.APP_RESOURCE,
-			"http://resources.geometrize.co.uk/"
+			"https://resources.geometrize.co.uk/"
 		)
 	];
 
@@ -249,6 +256,8 @@ class Main {
 	
 	private inline function init():Void {
 		setupLinks();
+		// Try to get latest download links from GitHub after setting up initial sensible ones
+		requestLatestGithubReleaseData();
 		
 		makeRows(startGalleryItems, addGalleryItem, startGalleryItemContainer, 3);
 		makeRows(keyFeaturesItems, addImageItem, keyFeaturesItemContainer, 4);
@@ -361,10 +370,9 @@ class Main {
 	 */
 	private static inline function makeDownloadSection(container:Element):Void {
 		var download = js.Browser.document.createAnchorElement();
-		download.className = "button stitched";
+		download.className = "button stitched geometrizedownloadlink";
 		download.innerText = "Download";
-		download.href = getDownloadLinkForOperatingSystem(PlatformDetector.getOperatingSystem());
-		download.target = "_blank";
+		setDownloadLinkForOperatingSystem(download, operatingSystem);
 		
 		var getCode = js.Browser.document.createAnchorElement();
 		getCode.className = "button stitched";
@@ -375,7 +383,7 @@ class Main {
 		var webDemo = js.Browser.document.createAnchorElement();
 		webDemo.className = "button stitched";
 		webDemo.innerText = "Web Demo";
-		webDemo.href = "http://www.samcodes.co.uk/project/geometrize-haxe-web/";
+		webDemo.href = "https://www.samcodes.co.uk/project/geometrize-haxe-web/";
 		webDemo.target = "_blank";
 		
 		var span = js.Browser.document.createSpanElement();
@@ -391,36 +399,31 @@ class Main {
 	/**
 	 * Populates on-page links that depend on the platform, for places other than the download button/other links sections
 	 */
-	private inline function setupLinks():Void {
+	private static inline function setupLinks():Void {
 		var anchors = js.Browser.document.getElementsByTagName("a");
 		for (anchor in anchors) {
 			var a:AnchorElement = cast anchor;
 			if (anchor.classList.contains("geometrizedownloadlink")) {
-				a.href = getDownloadLinkForOperatingSystem(operatingSystem);
+				setDownloadLinkForOperatingSystem(a, operatingSystem);
 			} else if (anchor.classList.contains("geometrizewindowsdownloadlink")) {
-				a.href = getDownloadLinkForOperatingSystem(OperatingSystem.WINDOWS);
+				setDownloadLinkForOperatingSystem(a, OperatingSystem.WINDOWS);
 			} else if (anchor.classList.contains("geometrizemacdownloadlink")) {
-				a.href = getDownloadLinkForOperatingSystem(OperatingSystem.OSX);
+				setDownloadLinkForOperatingSystem(a, OperatingSystem.OSX);
 			} else if (anchor.classList.contains("geometrizelinuxdownloadlink")) {
-				a.href = getDownloadLinkForOperatingSystem(OperatingSystem.LINUX);
+				setDownloadLinkForOperatingSystem(a, OperatingSystem.LINUX);
 			}
 		}
 	}
 	
-	private static inline function getDownloadLinkForOperatingSystem(os:OperatingSystem):String {
-		return "https://github.com/Tw1ddle/geometrize/releases/latest"; //TODO
-		/*
-		return switch(os) {
-			case OperatingSystem.WINDOWS:
-				"windows";
-			case OperatingSystem.OSX, OperatingSystem.IOS:
-				"mac";
-			case OperatingSystem.LINUX:
-				"https://github.com/Tw1ddle/geometrize/releases";
-			default:
-				"windows";
+	private static inline function setDownloadLinkForOperatingSystem(a:AnchorElement, os:OperatingSystem):Void {
+		if (platformDownloadLinks.exists(os)) {
+			a.href = platformDownloadLinks.get(os);
+			a.target = "";
+			return;
 		}
-		*/
+		
+		a.href = geometrizeReleasesUrl;
+		a.target = "_blank";
 	}
 	
 	private static inline function getScreenshotsFolderNameForOperatingSystem(os:OperatingSystem):String {
@@ -446,6 +449,60 @@ class Main {
 				"Linux";
 			default:
 				"Windows";
+		}
+	}
+	
+	/**
+	 *  Requests the latest release for the latest Geometrize release
+	 */
+	private static function requestLatestGithubReleaseData():Void {
+		var request = new Http(geometrizeReleasesRequestUrl);
+		request.onData = onGithubReleasesResponse;
+		request.request(false);
+	}
+	
+	/**
+	 *  Callback when response data about the latest release is received from Github
+	 */
+	private static function onGithubReleasesResponse(data:String):Void {
+		if (data == null) {
+			return;
+		}
+		
+		try {
+			var json = Json.parse(data);
+			
+			var assets = json.assets;
+			if (assets == null) {
+				trace("Failed to extract assets object");
+				return;
+			}
+			
+			var assetArr:Array<Dynamic> = cast assets;
+			
+			for (asset in assetArr) {
+				var browserUrl:String = asset.browser_download_url;
+				var name:String = asset.name;
+				
+				if (browserUrl == null || name == null) {
+					trace("Failed to extract browser URL/asset name");
+					continue;
+				}
+				
+				if (name.indexOf("linux") >= 0) {
+					platformDownloadLinks.set(OperatingSystem.LINUX, browserUrl);
+				} else if (name.indexOf("osx") >= 0) {
+					platformDownloadLinks.set(OperatingSystem.OSX, browserUrl);
+				} else if (name.indexOf("windows") >= 0) {
+					platformDownloadLinks.set(OperatingSystem.WINDOWS, browserUrl);
+				}
+			}
+			
+			// Set up page links again in case the download links have just changed
+			setupLinks();
+			
+		} catch (e:Dynamic) {
+			trace("Failed to parse JSON response");
 		}
 	}
 }
