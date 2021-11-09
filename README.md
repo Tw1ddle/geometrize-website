@@ -9,7 +9,7 @@ Repository for the [landing page](https://www.geometrize.co.uk/) of [Geometrize]
 
 ## Building
 
-Open the project file in VSCode and build for the JavaScript target. All recent Haxe versions are supported.
+Open the project folder in VSCode and build for the JavaScript target. All recent Haxe versions are supported.
 
 ## Notes
  * The image comparison sliders are based on [Cocoen](https://github.com/koenoe/cocoen) by [Koen Romers](https://github.com/koenoe).
