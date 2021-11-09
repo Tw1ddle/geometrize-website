@@ -4,13 +4,9 @@ import PlatformDetector;
 import haxe.Constraints;
 import haxe.Http;
 import haxe.Json;
-import haxe.ds.IntMap;
-import haxe.ds.ObjectMap;
 import js.Browser;
 import js.html.Element;
 import js.html.DivElement;
-import js.html.InputElement;
-import js.html.ButtonElement;
 import js.html.AnchorElement;
 import haxe.ds.EnumValueMap;
 

@@ -11,7 +11,7 @@ using StringTools;
 /**
  * A twenty-twenty-style image comparison widget.
  * Based on Cocoen (https://github.com/koenoe/cocoen) by Koen Romers (https://github.com/koenoe)
- * @author Sam Twidale (http://www.geometrize.co.uk/)
+ * @author Sam Twidale (https://www.geometrize.co.uk/)
  */
 class TwentyTwenty {
 	private var element:Element;

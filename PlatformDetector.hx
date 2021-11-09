@@ -11,7 +11,7 @@ enum OperatingSystem {
 
 /**
  * Helper methods for getting the reported OS of the client machine on js.
- * @author Sam Twidale (http://www.geometrize.co.uk/)
+ * @author Sam Twidale (https://www.geometrize.co.uk/)
  */
 class PlatformDetector {
 	public static function getOperatingSystem():OperatingSystem {
