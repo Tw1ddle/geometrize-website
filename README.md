@@ -1,7 +1,7 @@
 [![Geometrize Logo](https://github.com/Tw1ddle/geometrize-website/blob/master/screenshots/logo.png?raw=true "Geometrize website logo")](https://www.geometrize.co.uk/)
 
 [![CC-BY-NC-ND](https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
-[![Geometrize Website Build Status](https://ci.appveyor.com/api/projects/status/09l5nquksmev8ta4?svg=true)](https://ci.appveyor.com/project/Tw1ddle/geometrize-website)
+[![Build Status Badge](https://ci.appveyor.com/api/projects/status/github/Tw1ddle/geometrize-website)](https://ci.appveyor.com/project/Tw1ddle/geometrize-website)
 
 Repository for the [landing page](https://www.geometrize.co.uk/) of [Geometrize](https://github.com/Tw1ddle/geometrize), a desktop app for geometrizing images into geometric primitives.
 
