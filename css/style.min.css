@@ -1,0 +1,204 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #000000;
+    color: #222222;
+    font-size: 13px;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    outline: 0;
+}
+
+h1 {
+    font: 600 50px "Open Sans", sans-serif;
+    letter-spacing: 3px;
+    margin-bottom: 0px;
+}
+
+h2 {
+    font: 400 30px "Open Sans";
+}
+
+h3 {
+    font: 600 20px "Open Sans";
+}
+
+p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    line-height: 22px;
+    color: #888888;
+    margin: 10px 0;
+}
+
+a {
+    color: #222222;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+p a {
+    color: #222222;
+    text-decoration: none;
+}
+
+.downloadsectionspan {
+    margin: 0px auto;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    color: #888888;
+}
+
+.downloadsectionspan a {
+    width: 33%;
+    padding: 10px;
+}
+
+html {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
+li {
+    user-select: text;
+    -moz-user-select: text;
+    -khtml-user-select: text;
+    -ms-user-select: text;
+    -webkit-user-select: text;
+    -o-user-select: text;
+}
+
+body {
+    text-align: center;
+    background-color: #ffffff;
+}
+
+a:hover {
+    color: #555555;
+}
+
+.container p {
+    color: #222222;
+    text-decoration: none;
+}
+
+.imageitemcontainer {
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 0px 10px;
+    background: #ffffff;
+    color: #222222;
+    position:relative;
+    display: inline-block;
+}
+
+.imagefeatureitemcontainer {
+    max-width: 45%;
+    max-height: 50%;
+}
+
+.imageresourceitemcontainer {
+    max-width: 33%;
+}
+
+.galleryitemcontainer {
+    width: 30%;
+    max-width: 30%;
+    min-width: 360px;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 0px 10px;
+    background: #ffffff;
+    color: #222222;
+    position:relative;
+    display: inline-block;
+}
+
+.imageitem {
+
+}
+
+.imagefeatureitem {
+    max-width: 90%;
+    max-height: 100%;
+}
+
+.imageresourceitem {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.galleryitem {
+
+}
+
+.rowborder {
+
+}
+
+.galleryborder {
+    margin: 10px 10px 10px 10px;
+}
+
+.button {
+    margin: 10px;
+    display:inline-block;
+    cursor:pointer;
+    border: 0;
+    background: transparent
+}
+
+.rule {
+    margin: 30px auto;
+    width: 90%;
+    height: 2px;
+    border: none;
+    background: #cccccc;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(50,50,50,0.01)), to(rgba(80,80,80,0.01)), color-stop(.5,#c9c9c9));
+    background: -moz-linear-gradient(left, rgba(0,0,0,0.001) 0%, rgba(201,201,201,1) 50%, rgba(0,0,0,0.001) 100%);
+    background: -ms-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background: -o-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background: linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+}
+
+.smallrule {
+    width: 40%;
+}
+
+.stitched {
+    padding: 20px;
+    margin: 20px 10px 0px 10px;
+    background: #ffffff;
+    color: #222222;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1.3em;
+    box-shadow: 0 0 0 4px #ffffff, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+    font-weight: normal;
+}
+
+.stitched:hover {
+    box-shadow: 0 0 0 6px #ffffff, 2px 1px 6px 6px rgba(10, 10, 0, 0.5);
+}
+
+#moreinfo, #support {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 80%;
+}
+
+footer {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 80%;
+}
